@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+db_query('SELECT ${1:table fields} FROM {${2:table}} WHERE ${3:table_field} = :${4:key_value}', array(':${4:key_value}' => ${5:value}));
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<tabTrigger>dr7_query</tabTrigger>
+	<description>Database query </description>
+</snippet>

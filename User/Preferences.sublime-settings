@@ -1,0 +1,11 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Blackboard.tmTheme",
+	"font_size": 12.0,
+	"ignored_packages":
+	[
+		"AdvancedNewFile",
+		"SublimeCodeIntel",
+		"Vintage"
+	],
+	"theme": "Centurion.sublime-theme"
+}

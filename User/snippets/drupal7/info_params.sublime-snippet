@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+name = ${1:module name}
+description = ${2:module description}.
+core = ${3:core}.x
+package = ${4:package}
+dependencies[] = ${5:dependencies}
+dependencies[] = ${6:dependencies}
+files[] = ${7:files}
+files[] = ${8:files}
+files[] = ${9:files}
+files[] = ${10:files}
+configure = admin/config/content/${11:configure}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<tabTrigger>dr7_info_params</tabTrigger>
+</snippet>

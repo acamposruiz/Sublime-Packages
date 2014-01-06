@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+<!DOCTYPE html>
+<html lang="${1}">
+	<head>
+		<title>${2:Title Page}</title>
+		<meta charset=utf-8>
+		<meta name=description content="">
+		<meta name=viewport content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap CSS -->
+		<link href="${3://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css}" rel="stylesheet" media="screen">
+	</head>
+	<body>
+		<h1 class="text-center">${6:Hello World}</h1>
+
+		<!-- jQuery -->
+		<script src="${4://code.jquery.com/jquery.js}"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="${5://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js}"></script>
+	</body>
+</html>
+]]></content>
+	<tabTrigger>bs3-template:html5</tabTrigger>
+</snippet>

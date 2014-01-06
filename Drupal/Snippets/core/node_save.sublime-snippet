@@ -1,0 +1,5 @@
+<snippet>
+	<tabTrigger>node_save</tabTrigger>
+	<scope>source.php</scope>
+<content><![CDATA[node_save(${1:node})]]></content>
+</snippet>

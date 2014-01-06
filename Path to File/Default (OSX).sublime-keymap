@@ -1,0 +1,3 @@
+[
+    { "keys": ["super+n"], "command": "path_to_file" }
+]

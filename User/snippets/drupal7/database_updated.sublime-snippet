@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+\$output = db_update('${1:table}')
+  ->fields(array(
+    '${2:field name}' => ${3:value to update}
+  ))
+  ->condition('${4:field conditional}', ${5:value}, '${6:operator(>=)}')
+  ->execute();
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<tabTrigger>dr7_qr_updated</tabTrigger>
+	<description>Database updated query </description>
+</snippet>

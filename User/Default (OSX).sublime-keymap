@@ -1,0 +1,5 @@
+[
+	{ "keys": ["super+k", "super+i"],"command": "show_overlay", "args": {"overlay": "command_palette", "text": "Snippet: "} },
+	{ "keys": ["super+alt+w"], "command": "close_others" },
+	{ "keys": ["super+alt+shift+w"], "command": "close_to_right" }
+]

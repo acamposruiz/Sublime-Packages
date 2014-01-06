@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+\$output = db_delete('${1:table}')
+  ->condition('${2:field conditional}', ${3:value}, '${4:operator(>=)}')
+  ->execute();
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<tabTrigger>dr7_qr_delete</tabTrigger>
+	<description>Database delete query </description>
+</snippet>

@@ -1,0 +1,36 @@
+<snippet>
+	<content><![CDATA[
+\$form['${1:field name}'] = array(
+  '#type' => '${2:type}',
+  '#title' => t('${3:title}'),
+  '#default_value' => ${4:value},
+  '#size' => ${5:value},
+  '#maxlength' => ${6:value},
+  '#required' => ${7:TRUE OR FALSE},
+  '#description' => '${8:description}',
+  '#options' => ${9:options},
+  '#after_build' => array('${10:value}'),
+  '#ajax' => array(
+      'callback' => '${11:value}',
+      'wrapper' => '${12:value}',
+      'method' => '${13:value}',
+      'effect' => '${14:value}',
+    ),
+  '#attributes' => array(
+      'class' => array('${15:value}',
+      'id' => array('${16:value}',
+      'style' => array('${17:value}',)),
+  '#disabled' => ${17:FALSE},
+  '#multiple' => ${18:value},
+  '#prefix' => '<div class="">${19:value}</div>',
+  '#suffix' => '<div class="">${20:value}</div>',
+  '#resizable' => ${21:FALSE},
+);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<tabTrigger>dr7_ff</tabTrigger>
+	<description>Form field </description>
+</snippet>

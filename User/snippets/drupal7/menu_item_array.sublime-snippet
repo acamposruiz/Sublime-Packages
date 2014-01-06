@@ -1,0 +1,35 @@
+<snippet>
+	<content><![CDATA[
+\$items['${1:path}'] = array(
+  'title' => '${2:value}', // Don't use t() in menu item titles or descriptions
+  'title callback' => '${3:value}',
+  'title arguments' => '${4:value}',
+  'description' => '${5:value}',
+  'page callback' => '${6:value}',
+  'page arguments' => '${7:value}',
+  'delivery callback' => '${8:value}',
+  'access callback' => '${9:value}',
+  'access arguments' => array('${10:administer site configuration}'),
+  'theme callback' => '${11:value}',
+  'theme arguments' => '${12:value}',
+  'file' => '${13:filename.admin.inc}',
+  'file path' => ${14:drupal_get_path('module', 'system')},
+  'load arguments' => '${15:value}',
+  'weight' => ${16:0},
+  'menu_name' => '${17:value}',
+  'expanded' => '${18:value}',
+  'context' => '${19:MENU_CONTEXT_PAGE(default) OR MENU_CONTEXT_INLINE}',
+  'tab_parent' => '${20:value}',
+  'tab_root' => '${21:value}',
+  'position' => '${22:right}',
+  'type' => '${23:MENU_NORMAL_ITEM - MENU_CALLBACK - MENU_SUGGESTED_ITEM - MENU_LOCAL_ACTION - MENU_LOCAL_TASK - MENU_DEFAULT_LOCAL_TASK}',
+  'options' => '${24:value}'
+);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<tabTrigger>dr7_menuitem</tabTrigger>
+	<description>Menu item array </description>
+</snippet>

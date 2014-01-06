@@ -1,0 +1,58 @@
+[
+    {
+        "caption": "Django: Run Server",
+        "command": "django_run"
+    },
+    {
+        "caption": "Django: Sync Database",
+        "command": "django_syncdb"
+    },
+    {
+        "caption": "Django: Migrate Database",
+        "command": "django_migrate"
+    },
+    {
+        "caption": "Django: Migrate Schema",
+        "command": "django_schema_migration"
+    },
+    {
+        "caption": "Django: List Migrations",
+        "command": "django_list_migrations"
+    },
+    {
+        "caption": "Django: Set Virtual Environment",
+        "command": "set_virtual_env"
+    },
+    {
+        "caption": "Django: Terminal Here",
+        "command": "terminal_here"
+    },
+    {
+        "caption": "Django: Pip Freeze",
+        "command": "pip_freeze"
+    },
+    {
+        "caption": "Django: Test",
+        "command": "django_test_app"
+    },
+    {
+        "caption": "Django: Test All",
+        "command": "django_test_all"
+    },
+    {
+        "caption": "Django: Shell",
+        "command": "django_shell"
+    },
+    {
+        "caption": "Django: Help",
+        "command": "django_help"
+    },
+    {
+        "caption": "Django: Check",
+        "command": "django_check"
+    },
+    {
+        "caption": "Django: Custom Command",
+        "command": "django_custom"
+    }
+]

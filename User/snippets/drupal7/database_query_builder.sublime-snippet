@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+\$query = db_select('${1:table}', 'r')
+  //->extend('PagerDefault')
+  ->condition('${2:field}', ${3:value})
+  ->fields('r', array('${4:field name}'))
+  //->range(0,${5:value})
+  //->limit(${6:limit})
+  //->orderBy('${7:field name}', 'DESC')
+  //->distinct()
+  ->execute();
+foreach($result as $row) {
+  ${8:expresion};
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<tabTrigger>dr7_qr_query_builder</tabTrigger>
+	<description>Database Query Builder </description>
+</snippet>

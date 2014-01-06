@@ -1,0 +1,5 @@
+[
+
+    { "caption": "View: Toggle Full Screen", "command": "toggle_full_screen" },
+    { "caption": "View: Toggle Distraction Free", "command": "toggle_distraction_free" }
+]

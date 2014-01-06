@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+\$field = array(
+  'field_name' => '${1:value}',
+  'type' => '${2:value}',
+  'entity_types' => array('${3:node}'),
+  'translatable' => ${4:TRUE},
+);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<tabTrigger>dr7_field</tabTrigger>
+	<description>Field definition array</description>
+</snippet>

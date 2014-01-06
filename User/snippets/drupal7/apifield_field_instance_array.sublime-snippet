@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+\$instance = array(
+  'field_name' => '${1:value}',
+  'entity_type' => '${2:value}',
+  'bundle' => ${3:value},
+  'label' => t('${4:value}'),
+  'widget_type' => '${5:value}',
+  'settings' => array('display_summary' => ${6:TRUE}),
+  'display' => array(
+  'default' => array(
+    'type' => '${7:value}',
+    ),
+ 'teaser' => array(
+    'type' => '${8:value}',
+    ),
+  )
+);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<tabTrigger>dr7_field_instance</tabTrigger>
+	<description>Field array instance </description>
+</snippet>

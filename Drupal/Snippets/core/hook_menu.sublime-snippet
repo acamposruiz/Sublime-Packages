@@ -1,0 +1,15 @@
+<snippet>
+	<tabTrigger>h.menu</tabTrigger>
+	<scope>source.php</scope>
+<content><![CDATA[/**
+ * Implements hook_menu().
+ */
+function ${TM_FILENAME/([^\.]+)\..*/$1/}_menu() {
+	\$items = array();
+	\$items['${2:path}'] = array(
+		'title' => '$3',
+		'page callback' => '$4',$0
+	);
+	return \$items;
+}]]></content>
+</snippet>

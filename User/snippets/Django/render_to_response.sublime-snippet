@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+render_to_response('${1:template}', ${2:ctx}, context_instance = RequestContext(request))
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<!-- <tabTrigger>hello</tabTrigger> -->
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+	<tabTrigger>dj_r2r</tabTrigger>
+	<description>render_to_response(...context_instance = RequestContext(request)) </description>
+</snippet>
