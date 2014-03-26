@@ -3,10 +3,11 @@ import time
 
 
 class ViewCollection:
-    views = {}
+    views = {} # Todo: these aren't really views but handlers. Refactor/Rename.
     git_times = {}
     git_files = {}
     buf_files = {}
+    compare_against = "HEAD"
 
     @staticmethod
     def add(view):
@@ -15,8 +16,9 @@ class ViewCollection:
             from GitGutter.git_gutter_handler import GitGutterHandler
         except ImportError:
             from git_gutter_handler import GitGutterHandler
-        ViewCollection.views[key] = GitGutterHandler(view)
-        ViewCollection.views[key].reset()
+        handler = ViewCollection.views[key] = GitGutterHandler(view)
+        handler.reset()
+        return handler
 
     @staticmethod
     def git_path(view):
@@ -29,6 +31,19 @@ class ViewCollection:
     @staticmethod
     def get_key(view):
         return view.file_name()
+
+    @staticmethod
+    def has_view(view):
+        key = ViewCollection.get_key(view)
+        return key in ViewCollection.views
+
+    @staticmethod
+    def get_handler(view):
+        if ViewCollection.has_view(view):
+            key = ViewCollection.get_key(view)
+            return ViewCollection.views[key]
+        else:
+            return ViewCollection.add(view)
 
     @staticmethod
     def diff(view):
@@ -58,6 +73,11 @@ class ViewCollection:
         return time.time() - ViewCollection.git_times[key]
 
     @staticmethod
+    def clear_git_time(view):
+        key = ViewCollection.get_key(view)
+        ViewCollection.git_times[key] = 0
+
+    @staticmethod
     def update_git_time(view):
         key = ViewCollection.get_key(view)
         ViewCollection.git_times[key] = time.time()
@@ -77,3 +97,15 @@ class ViewCollection:
             ViewCollection.buf_files[key] = tempfile.NamedTemporaryFile()
             ViewCollection.buf_files[key].close()
         return ViewCollection.buf_files[key]
+
+    @staticmethod
+    def set_compare(commit):
+        print("GitGutter now comparing against:",commit)
+        ViewCollection.compare_against = commit
+
+    @staticmethod
+    def get_compare():
+        if ViewCollection.compare_against:
+            return ViewCollection.compare_against
+        else:
+            return "HEAD"

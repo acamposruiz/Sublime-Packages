@@ -6,7 +6,14 @@ import re
 import glob
 from os import sep
 from itertools import takewhile
-from fsutils import *
+
+if sublime.version() < '3000':
+    # we are on ST2 and Python 2.X
+    _ST3 = False
+    from fsutils import *
+else:
+    _ST3 = True
+    from .fsutils import *
 
 # Enable SublimeText2 to complete filesystem paths a la VIM:
 # @author Luke Hudson <lukeletters@gmail.com>
@@ -16,7 +23,33 @@ from fsutils import *
 activated = False
 
 def getviewcwd(view):
-    return os.path.dirname(view.file_name())
+    default = '/' ## What to return if nothing else found
+    cwd     = view.file_name() ## Try to get the current view's filename
+    if cwd == None:
+        cwd = default
+        #print ("getviewcwd: No view filename found")
+        ## File is not saved to disk, look for project dir
+        window = sublime.active_window()
+        if window == None:
+            #print ("getviewcwd: No active window found")
+            return cwd ## Give up here if we can't even get an active window!
+        try:
+            folder = window.project_data()['folders'].pop()
+            #print ("getviewcwd: folder found", folder)
+            cwd = folder['path']
+        except AttributeError:
+            #print ("getviewcwd: project_data not found, or no folders found in data")
+            try:
+                folder = window.folders().pop()
+                #print ("getviewcwd: folder found", folder)
+                cwd = folder.path
+            except AttributeError:
+                #print ("getviewcwd: folders() not found, or was empty list")
+                pass
+        #print ("getviewcwd: returning cwd", cwd)
+        return cwd
+    else:
+        return os.path.dirname(cwd)
 
 class FileSystemCompTriggerCommand(sublime_plugin.TextCommand):
 
@@ -24,7 +57,7 @@ class FileSystemCompTriggerCommand(sublime_plugin.TextCommand):
         global activated
         view = self.view
 
-        activated = True        
+        activated = True
 
         view.run_command('auto_complete',
             {'disable_auto_insert': True,
@@ -32,7 +65,8 @@ class FileSystemCompTriggerCommand(sublime_plugin.TextCommand):
 
 class FileSystemCompCommand(sublime_plugin.EventListener):
     """
-    Enable SublimeText2 to complete filesystem paths a la VIM:
+    Enable SublimeText2 to complete
+    filesystem paths a la VIM:
     """
 
     def on_query_completions(self, view, prefix, locations):
@@ -47,7 +81,7 @@ class FileSystemCompCommand(sublime_plugin.EventListener):
 
         guessed_path = scanpath(lstr)
 
-        # if it is not obvious (part stars in a file system root) then we have
+        # If it is not obvious (part starts in a file system root) then we have
         # to be explicitly activated
         if not activated and not isexplicitpath(guessed_path):
             return None
@@ -92,7 +126,7 @@ class FileSystemCompCommand(sublime_plugin.EventListener):
 
         matches = []
         for fname in iglob(pattern):
-            completion = os.path.basename(fname) 
+            completion = os.path.basename(fname)
 
             if escaped_path:
                 completion = escape_scapes(completion)
@@ -126,8 +160,8 @@ class FileSystemCompCommand(sublime_plugin.EventListener):
             lastword = path[path.rfind(sep)+1:]
 
             # difference between the completion and the lastword
-            rest = '' 
-            
+            rest = ''
+
             if path[-1] != ' ':
                 lastword = lastword[lastword.rfind(' ')+1:]
                 rest = completion[completion.find(lastword):]

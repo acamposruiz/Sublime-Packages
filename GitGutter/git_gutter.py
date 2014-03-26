@@ -25,7 +25,7 @@ class GitGutterCommand(sublime_plugin.WindowCommand):
                     'deleted_dual', 'inserted', 'changed',
                     'untracked', 'ignored']
 
-    def run(self):
+    def run(self, force_refresh=False):
         self.view = self.window.active_view()
         if not self.view:
             # View is not ready yet, try again later.
@@ -39,6 +39,8 @@ class GitGutterCommand(sublime_plugin.WindowCommand):
         else:
             # If the file is untracked there is no need to execute the diff
             # update
+            if force_refresh:
+                ViewCollection.clear_git_time(self.view)
             inserted, modified, deleted = ViewCollection.diff(self.view)
             self.lines_removed(deleted)
             self.bind_icons('inserted', inserted)
@@ -72,12 +74,17 @@ class GitGutterCommand(sublime_plugin.WindowCommand):
         self.bind_icons('deleted_dual', dual_lines)
 
     def icon_path(self, icon_name):
+        if icon_name in ['deleted_top','deleted_bottom','deleted_dual']:
+            if self.view.line_height() > 15:
+                icon_name = icon_name + "_arrow"
+
         if int(sublime.version()) < 3014:
             path = '..'
             extn = ''
         else:
             path = 'Packages'
             extn = '.png'
+        
         return path + '/GitGutter/icons/' + icon_name + extn
 
     def bind_icons(self, event, lines):

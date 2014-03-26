@@ -3,7 +3,9 @@ Centurion Blue
 
 This is a fork from the [Centurion theme](https://github.com/allanhortle/Centurion).
 
-[![Centurion theme](https://token.fnkr.net/kVnsq5LhzShx-)](https://token.fnkr.net/kVnsq5LhzShx)
+[![Centurion theme](https://ge1.me/kVnsq5LhzShx-)](https://ge1.me/kVnsq5LhzShx)
+
+Issues: https://redmine.fnkr.net/projects/sublimetext-centurionblue/issues
 
 
 Centurion

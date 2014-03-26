@@ -5,6 +5,9 @@
 		"AdvancedNewFile",
 		"Alignment",
 		"All Autocomplete",
+		"AngularJS",
+		"AngularJS (CoffeeScript)",
+		"AngularJS Snippets",
 		"AutoFileName",
 		"Bootstrap 3 Snippets",
 		"BracketHighlighter",
@@ -22,7 +25,9 @@
 		"Fix Mac Path",
 		"Git Status Files",
 		"GitGutter",
+		"Gitignore",
 		"Google Search",
+		"Google Spell Check",
 		"Google Translate",
 		"JavaScript and jQuery API Completions",
 		"JavaScript Patterns",
@@ -48,6 +53,7 @@
 		"Theme - Centurion",
 		"Theme - Centurion Blue",
 		"Theme - Soda",
+		"View In Browser",
 		"WordHighlight"
 	]
 }

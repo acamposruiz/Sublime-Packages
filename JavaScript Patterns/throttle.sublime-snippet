@@ -1,5 +1,5 @@
 <snippet>
-  <content><![CDATA[
+	<content><![CDATA[
 var ${1:functionName} = (function () {
 	'use strict';
 
@@ -10,14 +10,14 @@ var ${1:functionName} = (function () {
 		${4: // your code goes here}
 	};
 
-	return function() {
+	return function () {
 		if ((lastExecution.getTime() + timeWindow) <= (new Date()).getTime()) {
 			lastExecution = new Date();
 			return ${1:functionName}.apply(this, arguments);
 		}
 	};
 }());]]></content>
-  <tabTrigger><![CDATA[throttle]]></tabTrigger>
-  <scope>source.js</scope>
-  <description>Throttled function</description>
+	<tabTrigger><![CDATA[throttle]]></tabTrigger>
+	<scope>source.js</scope>
+	<description>Throttled function</description>
 </snippet>

@@ -1,5 +1,5 @@
 <snippet>
-  <content><![CDATA[
+	<content><![CDATA[
 var ${1:functionName} = (function () {
 	'use strict';
 
@@ -12,14 +12,14 @@ var ${1:functionName} = (function () {
 
 	return function() {
 		var context = this;
-    var args = arguments;
-    clearTimeout(timeout);
-    timeout = setTimeout(function(){
-      ${1:functionName}.apply(context, args);
-    }, timeWindow);
+	var args = arguments;
+	clearTimeout(timeout);
+	timeout = setTimeout(function(){
+		${1:functionName}.apply(context, args);
+	}, timeWindow);
 	};
 }());]]></content>
-  <tabTrigger><![CDATA[debounce]]></tabTrigger>
-  <scope>source.js</scope>
-  <description>Debounced function</description>
+	<tabTrigger><![CDATA[debounce]]></tabTrigger>
+	<scope>source.js</scope>
+	<description>Debounced function</description>
 </snippet>

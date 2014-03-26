@@ -1,9 +1,6 @@
-# JavaScript Patterns snippets
+# JavaScript Patterns snippets [![Build Status](https://secure.travis-ci.org/caiogondim/js-patterns-sublime-snippets.png?branch=master)](https://travis-ci.org/caiogondim/js-patterns-sublime-snippets)
 
-<img
-  src="https://raw.github.com/caiogondim/js-patterns-sublime-snippets/assets/js-patterns-logo.png"
-  alt="JS Patterns logo" align="right"
-/>
+<img src="https://raw.github.com/caiogondim/js-patterns-sublime-snippets/assets/js-patterns-logo.png" alt="JS Patterns logo" align="right" />
 
 Snippets for [Sublime Text](http://www.sublimetext.com/) with **good solutions
 for regular problems** in JavaScript.
@@ -17,8 +14,8 @@ for regular problems** in JavaScript.
 To install through Package Control, search for **JavaScript Patterns**. If you
 still don't have Package Control in Sublime Text,
 [go get it](http://wbond.net/sublime_packages/package_control/installation).
-If you insist to not install it, you can download the package and put it manually
-inside your Pacakages directory. It should work but will not update
+If you insist to not install it, you can download the package and put it
+manually inside your Pacakages directory. It should work but will not update
 automatically.
 
 
@@ -26,10 +23,7 @@ automatically.
 
 Some JS Patterns snippets in the wild.
 
-<img
-  src="https://raw.github.com/caiogondim/js-patterns-sublime-snippets/assets/in-the-wild.gif"
-  alt="In the wild"
-/>
+<img src="https://raw.github.com/caiogondim/js-patterns-sublime-snippets/assets/in-the-wild.gif" alt="In the wild" />
 
 
 ## Immediate function
@@ -137,21 +131,21 @@ created at first will be returned.
 
 ```javascript
 var singletonName = (function() {
-    'use strict';
+  'use strict';
 
-    var instance;
+  var instance;
 
-    singletonName = function() {
-        if (instance) {
-            return instance;
-        }
+  singletonName = function() {
+    if (instance) {
+      return instance;
+    }
 
-        instance = this;
+    instance = this;
 
-        // your code goes here
-    };
+    // your code goes here
+  };
 
-    return singletonName;
+  return singletonName;
 
 }());
 
@@ -263,10 +257,10 @@ var onResize = (function () {
   var lastExecution = new Date((new Date()).getTime() - timeWindow);
 
   var onResize = function (args) {
-     // your code goes here
+    // your code goes here
   };
 
-  return function() {
+  return function () {
     if ((lastExecution.getTime() + timeWindow) <= (new Date()).getTime()) {
       lastExecution = new Date();
       return onResize.apply(this, arguments);
@@ -324,3 +318,27 @@ All the snippets should run in:
 - Node.js 0.10+
 
 If you found some error, please open an issue or send a pull request.
+
+
+## License
+The MIT License (MIT)
+
+Copyright (c) 2014 [Caio Gondim](http://caiogondim.com)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
